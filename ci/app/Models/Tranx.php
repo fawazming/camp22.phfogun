@@ -3,14 +3,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Delegates extends Model
+class Tranx extends Model
 {
-    protected $table = 'delegates';
+    protected $table = 'tranx';
     protected $primaryKey = 'id';
 
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['fname','lname','lb','phone','email','category','school','ref','old','paid','gender'];
+    protected $allowedFields = ['email','status','ref','url'];
+
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

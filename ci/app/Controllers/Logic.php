@@ -10,46 +10,37 @@ class Logic extends BaseController
 
 	public function index()
 	{
-<<<<<<< HEAD
-		echo view('options');
-=======
         echo view('header');
         echo view('options');
 		echo view('footer');
->>>>>>> 5b6c122 (2022)
 	}
 
 	public function buypin()
 	{
-<<<<<<< HEAD
-		echo view('buypin');
-=======
         echo view('header');
         echo view('buypin');
 		echo view('footer');
->>>>>>> 5b6c122 (2022)
 	}
+
+    public function payonline()
+    {
+        echo view('header');
+        echo view('payonline');
+        echo view('footer');
+    }
 
 	public function register()
 	{
-<<<<<<< HEAD
-		echo view('pin');
-=======
         echo view('header');
         echo view('pin');
 		echo view('footer');
->>>>>>> 5b6c122 (2022)
 	}
 
 	public function pinstatus()
 	{
-<<<<<<< HEAD
-		echo view('pinstatus');
-=======
         echo view('header');
         echo view('pinstatus');
 		echo view('footer');
->>>>>>> 5b6c122 (2022)
 	}
 
 	public function vendors()
@@ -59,32 +50,20 @@ class Logic extends BaseController
 
 	public function msg($mg = "Hello")
 	{
-<<<<<<< HEAD
-		echo view('msg', ['mg' => $mg]);
-=======
         echo view('header');
 		echo view('msg', ['mg' => $mg]);
         echo view('footer');
->>>>>>> 5b6c122 (2022)
 	}
 
 	public function pin()
 	{
 		$incoming = $this->request->getGet();
 		$Pins = new \App\Models\Pins();
-
-<<<<<<< HEAD
-		if($value = $Pins->where(['pin'=>$incoming['pin'],'used !='=>'yes'])->find()){
-			// $Pins->update($value[0]['id'],['used'=>'using']);
-			echo view('home',['ref'=>$incoming['pin']]);
-=======
 		if($value = $Pins->where(['pin'=>$incoming['pin'],'used !='=>1])->find()){
-			// $Pins->update($value[0]['id'],['used'=>'using']);
             echo view('header');
 			echo view('home',['ref'=>$incoming['pin']]);
             echo view('footer');
 
->>>>>>> 5b6c122 (2022)
 		}else{
 			$this->msg("The pin you entered is invalid");
 		}
@@ -96,12 +75,6 @@ class Logic extends BaseController
 		$Pins = new \App\Models\Pins();
 
 		$value = $Pins->where(['pin'=>$incoming['pin']])->find();
-<<<<<<< HEAD
-		$this->msg("Is the pin used? ". strtoupper($value[0]['used']));
-		
-	}
-
-=======
 		$this->msg("Is the pin used? ". $this->boolconv($value[0]['used']));
 		
 	}
@@ -123,22 +96,10 @@ class Logic extends BaseController
         }
     }
 
->>>>>>> 5b6c122 (2022)
 	public function registration()
 	{
 		$incoming = $this->request->getPost();
 		$Pins = new \App\Models\Pins();
-<<<<<<< HEAD
-		$Delegates = new \App\Models\Delegates();
-		$pin_id = $Pins->where('pin',$incoming['ref'])->find()[0]['id'];
-		if($value = $Pins->where(['id'=>$pin_id,'used'=>'yes'])->find()){
-			$this->msg('Sorry, this pin has been used.');
-		}else{
-		$id = $Delegates->insert($incoming);
-		$Pins->update($pin_id,['used'=>'yes']);
-		$this->msg('Congratulations! Your registration was successful <br> Reg. No: <b> '.$id.'</b>');
-		}
-=======
         $Delegates = new \App\Models\Delegates();
 		$Delegates21 = new \App\Models\Delegates21();
         if($incoming['lcamp'] == 'on'){
@@ -160,11 +121,6 @@ class Logic extends BaseController
 
         }else{
             $pin = $Pins->where('pin',$incoming['ref'])->find()[0];
-    		// $pin_id = $Pins->where('pin',$incoming['ref'])->find()[0]['id'];
-
-    		// if($value = $Pins->where(['id'=>$pin_id,'used'=>'yes'])->find()){
-      //           $this->msg('Sorry, this pin has been used.');
-      //       }else{
             if($pin['used'] == 1){
                 $this->msg('Sorry, this pin has been used.');
             }else{
@@ -173,7 +129,6 @@ class Logic extends BaseController
     		  $this->msg('Congratulations! Your registration was successful <br> Reg. No: <b> '.$id.'</b>');
     		}
         }
->>>>>>> 5b6c122 (2022)
 	}
 
 	public function sms()
@@ -207,9 +162,6 @@ class Logic extends BaseController
 		
 	public function samp()
 	{
-<<<<<<< HEAD
-		echo ($this->uniqidReal(8));
-=======
         $Pins = new \App\Models\Pins();
 
         for ($i=1; $i <= 3000; $i++) {
@@ -218,13 +170,72 @@ class Logic extends BaseController
             $id = $Pins->insert(['pin'=> $p]);
 
         }
->>>>>>> 5b6c122 (2022)
 		
 	}
+
+    public function proceedOnline()
+    {
+        $Tranx = new \App\Models\Tranx();
+       $incoming = $this->request->getPost();
+       $amt = 510000;
+       $payment = $this->genPayLink($incoming['email'], $amt);
+        $payData = json_decode($payment['response']);
+        $payRef = $payment['ref'];
+        $data = [
+            'email' => $incoming['email'],
+            'status' => 'Intialize',
+            'ref' => $payRef,
+            'url' => $payData->data->checkout_url
+        ];
+        $Tranx->insert($data);
+        return redirect()->to($payData->data->checkout_url);
+    }
+
+    public function webhook()
+    {
+        $Alerts = new \App\Models\Alerts();
+        $incoming = $this->request->getPost();
+        $Alerts->insert(['message'=>json_encode($incoming), 'linked'=>0]);
+    }
+
+    private function genPayLink($email,$amt)
+    {
+        $ref = uniqid('phf22_', true);
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+          CURLOPT_URL => "https://api.collect.africa/payments/initialize",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => "{\"email\":\"".$email."\",\"amount\":".$amt.",\"reference\":\"".$ref."\"}",
+          CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer ".$_ENV['paySK']."",
+            "accept: application/json",
+            "content-type: application/json"
+          ],
+        ]);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+          return "cURL Error #:" . $err;
+        } else {
+          return ['response'=>$response,'ref' => $ref];
+        }
+    }
 	//--------------------------------------------------------------------
 
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5b6c122 (2022)
+
+
+    // https://api.collect.africa
+//
+//

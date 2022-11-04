@@ -14,11 +14,8 @@
     <div class="coner">
         <div class="text-center" style="margin-bottom:8px; display: flex; justify-content: center; align-items: center;">
             <img src="assets/logo.png" width="80px" alt="">
-<<<<<<< HEAD
-            <h4>PMC '21 <br> Registeration Portal</h4>
-=======
+
             <h4>PMC '22 <br> Registeration Portal</h4>
->>>>>>> 5b6c122 (2022)
         </div>
         <h5><a href="<?=base_url('/')?>">Home</a> > Buy pin from vendors</h5>
         <div class="row">

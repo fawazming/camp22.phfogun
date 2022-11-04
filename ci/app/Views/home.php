@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/chota.css">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>PMC Registration Portal</title>
-</head>
-
-<body>
-    <div class="coner">
-        <div class="text-center" style="margin-bottom:8px; display: flex; justify-content: center; align-items: center;">
-            <img src="assets/logo.png" width="80px" alt="">
-            <h4>PMC '21 <br> Registration Portal</h4>
-        </div>
-=======
-
->>>>>>> 5b6c122 (2022)
         <div class="progress-container">
             <div class="progress" id="progress"></div>
             <div class="circle active">1</div>
@@ -51,15 +29,12 @@
                         <option value="others">Others</option>
                     </select>
                 </div>
-<<<<<<< HEAD
-=======
                 <div class="text-center form-check form-check-inline">
                       <input type="checkbox" class="form-check-input" name="lcamp" id="lcamp">
                       <label class="form-check-label" for="lcamp">
                         I attended last December camp at Vanguards Academy
                       </label>
                 </div>
->>>>>>> 5b6c122 (2022)
             </fieldset>
         </div>
         <div class="fieldset" id="two">
@@ -102,11 +77,7 @@
                     <label for="sch" class="form-label">School/Course/Profession</label>
                     <input type="sch" name="school" required id="sch" class="form-control" placeholder="" aria-describedby="sch">
                     <input type="hidden"  name="ref" value=<?=$ref?> >
-<<<<<<< HEAD
-=======
                     <input type="hidden"  name="old" value="0" >
-
->>>>>>> 5b6c122 (2022)
                 </div>
                 <div class="text-center form-check form-check-inline">
                       <input type="checkbox" class="form-check-input" id="transfer">
@@ -146,16 +117,7 @@
         <div class="text-center d-none" id="btn2">
             <button type="submit" class="btn btn-success" id="reg">Confirm Registeration</button>
         </div>
-<<<<<<< HEAD
-        </form>
-    </div>
-    <script src="assets/script.js"></script>
-</body>
-
-</html>
-=======
         <div class="text-center d-none" id="btn3">
             <button type="submit" class="btn btn-success" id="lastCamp">Verify Attendance</button>
         </div>
         </form>
->>>>>>> 5b6c122 (2022)

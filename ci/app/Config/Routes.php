@@ -41,6 +41,9 @@ $routes->post('/register', 'Logic::registration');
 $routes->post('/sns/pmc', 'Logic::sms');
 $routes->get('pin', 'Logic::pin');
 $routes->get('pinstat', 'Logic::pinstat');
+$routes->get('payonline', 'Logic::payonline');
+$routes->post('proceedpayonline', 'Logic::proceedOnline');
+$routes->post('collectafricacall', 'Logic::webhook');
 
 /**
  * --------------------------------------------------------------------
