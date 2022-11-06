@@ -210,7 +210,7 @@ class Logic extends BaseController
                     'to' => $tranx['email'],
                     'type' => 'link',
                     'subject' => 'PMC Pin Purchase Successful',
-                    'message' => ['p1' => 'Al hamdulillah! Your pin purchase was successful.', 'p2'=>'Your Pin is '.$pins['pin'].'', 'p3' => 'Do continue your registeration by visiting https://camp.phfogun.org/register.', 'link'=>'https://camp.phfogun.org/register?pin='.$pins['pin'].'', 'linktext'=>'Click here to continue your registeration'],
+                    'message' => ['p1' => 'Al hamdulillah! Your pin purchase was successful.', 'p2'=>'Your Pin is '.$pins['pin'].'', 'p3' => 'Do continue your registeration by visiting https://camp.phfogun.org/register.', 'link'=>'https://camp.phfogun.org/register/'.$pins['pin'].'', 'linktext'=>'Click here to continue your registeration'],
                 ];
                 if ($this->mailer($data)) {
                     $Tranx->update($tranx['id'], ['status'=>'Email Sent']);
