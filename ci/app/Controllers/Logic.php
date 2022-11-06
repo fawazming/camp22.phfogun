@@ -194,8 +194,17 @@ class Logic extends BaseController
     public function webhook()
     {
         $Alerts = new \App\Models\Alerts();
-        $incoming = $this->request->getVar();
-        $Alerts->insert(['message'=>json_encode($incoming), 'linked'=>0]);
+        $Tranx = new \App\Models\Tranx();
+
+        $incoming = json_encode($this->request->getVar());
+        $id = $Alerts->insert(['message'=>$incoming, 'linked'=>0]);
+        $dt = json_decode($incoming);
+        $tranxID = $Tranx->where('ref',$dt->ref)->find()[0]['id'];
+        $Tranx->update($tranxID, ['status'=>$dt->stat]);
+
+        // if($dt->stat == 'success'){
+
+        // }
     }
 
     private function genPayLink($email,$amt)
