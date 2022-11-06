@@ -2,10 +2,7 @@ let circles = document.querySelectorAll('.circle');
 let prog = document.querySelector('.progress');
 let fields = document.querySelectorAll('fieldset');
 let transfer = document.querySelector('#transfer');
-<<<<<<< HEAD
-=======
 let lcamp = document.querySelector('#lcamp');
->>>>>>> 5b6c122 (2022)
 let prev = document.querySelector('#prev');
 let next = document.querySelector('#next');
 
@@ -18,9 +15,6 @@ transfer.addEventListener('click', () => {
         document.querySelector('#btn2').classList.toggle('d-none');
     }
 })
-
-<<<<<<< HEAD
-=======
 lcamp.addEventListener('click', () => {
     if (lcamp.checked === true) {
         document.querySelector('#btn1').classList.add('d-none');
@@ -42,7 +36,6 @@ if(document.querySelector('#lb').value){
     console.log(v)
 }
 
->>>>>>> 5b6c122 (2022)
 let count = 0;
 
 next.addEventListener('click', () => {

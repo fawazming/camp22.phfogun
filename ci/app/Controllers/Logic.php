@@ -29,10 +29,10 @@ class Logic extends BaseController
         echo view('footer');
     }
 
-	public function register()
+	public function register($pin = '')
 	{
         echo view('header');
-        echo view('pin');
+        echo view('pin', ['pin'=>$pin]);
 		echo view('footer');
 	}
 

@@ -34,6 +34,7 @@ $routes->get('/', 'Logic::index');
 $routes->get('/samp', 'Logic::samp');
 $routes->get('/buypin', 'Logic::buypin');
 $routes->get('/register', 'Logic::register');
+$routes->get('/register/(:any)', 'Logic::register/$1');
 $routes->get('/pinstatus', 'Logic::pinstatus');
 $routes->get('/vendors', 'Logic::vendors');
 $routes->get('/msg', 'Logic::msg');

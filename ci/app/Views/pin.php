@@ -5,7 +5,7 @@
                 <div class="mb-3 row" style="align-items: center;">
                     <label for="inputName" class="col-sm-1-12 col-form-label">Pin:</label>
                     <div class="col-sm-1-12">
-                        <input type="text" class="form-control" style="width: 200px;" name="pin" id="pin" placeholder="e.g N097C">
+                        <input type="text" class="form-control" style="width: 200px;" name="pin" id="pin" placeholder="e.g N097C" required value="<?=$pin?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
