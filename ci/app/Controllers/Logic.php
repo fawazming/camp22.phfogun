@@ -194,7 +194,7 @@ class Logic extends BaseController
     public function webhook()
     {
         $Alerts = new \App\Models\Alerts();
-        $incoming = $this->request->getGet();
+        $incoming = $this->request->getVar();
         $Alerts->insert(['message'=>json_encode($incoming), 'linked'=>0]);
     }
 
