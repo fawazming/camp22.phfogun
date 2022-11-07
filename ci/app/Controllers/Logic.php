@@ -177,7 +177,7 @@ class Logic extends BaseController
     {
         $Tranx = new \App\Models\Tranx();
        $incoming = $this->request->getPost();
-       $amt = 10000;
+       $amt = 500000;
        $payment = $this->genPayLink($incoming['email'], $amt);
         $payData = json_decode($payment['response']);
         $payRef = $payment['ref'];
