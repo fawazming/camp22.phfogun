@@ -102,7 +102,7 @@ class Logic extends BaseController
 		$Pins = new \App\Models\Pins();
         $Delegates = new \App\Models\Delegates();
 		$Delegates21 = new \App\Models\Delegates21();
-        if($incoming['lcamp'] == 'on'){
+        if(isset($incoming['lcamp']) && $incoming['lcamp'] == 'on'){
             $wdata = [
                 'fname' => $incoming['fname'],
                 'lname' => $incoming['lname'],
@@ -162,16 +162,30 @@ class Logic extends BaseController
 		
 	public function samp()
 	{
-        $Pins = new \App\Models\Pins();
+        // $Pins = new \App\Models\Pins();
 
-        for ($i=1; $i <= 3000; $i++) {
-            $p = strtoupper($this->uniqidReal(5));
-            echo ($i.' '.$p.'<br>');
-            $id = $Pins->insert(['pin'=> $p]);
+        // for ($i=1; $i <= 3000; $i++) {
+        //     $p = strtoupper($this->uniqidReal(5));
+        //     echo ($i.' '.$p.'<br>');
+        //     $id = $Pins->insert(['pin'=> $p]);
 
-        }
-		
+        // }
+        echo ($this->uniqidReal(16));
+
 	}
+
+    public function vend($vendor)
+    {
+        $Pins = new \App\Models\Pins();
+        $pp = $Pins->where(['sold'=>0, 'used'=>0, 'vendor'=>'new'])->limit(20)->find();
+        // var_dump($pp);
+        echo ('20 Pins for vendor '.$vendor.'<br>');
+        foreach ($pp as $key => $pin) {
+            $Pins->update($pin['id'], ['sold'=>1, 'vendor'=>$vendor]);
+            echo ($pin['pin'].'<br>');
+        }
+
+    }
 
     public function proceedOnline()
     {
@@ -213,7 +227,7 @@ class Logic extends BaseController
                     'message' => ['p1' => 'Al hamdulillah! Your pin purchase was successful.', 'p2'=>'Your Pin is '.$pins['pin'].'', 'p3' => 'Do continue your registeration by visiting https://camp.phfogun.org/register.', 'link'=>'https://camp.phfogun.org/register/'.$pins['pin'].'', 'linktext'=>'Click here to continue your registeration'],
                 ];
                 if ($this->mailer($data)) {
-                    $Tranx->update($tranx['id'], ['status'=>'Email Sent']);
+                    $Tranx->update($tranx['id'], ['status'=>$pins['pin']]);
                 }
         }
     }
@@ -618,9 +632,5 @@ class Logic extends BaseController
 	//--------------------------------------------------------------------
 
 }
-
-
-
-    // https://api.collect.africa
 //
 //

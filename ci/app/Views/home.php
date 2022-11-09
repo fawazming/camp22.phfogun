@@ -62,6 +62,19 @@
             <fieldset class="d-none" style="margin-bottom: 1rem; border-width: 0px;">
                 <h4>Work/School Details</h4>
                 <div class="mb-3">
+                    <label for="org" class="form-label">Which Islamic org. do you belong to?</label>
+                    <select name="org" id="org" required>
+                        <option>Choose an Organisation</option>
+                        <option value="phf">PHF</option>
+                        <option value="tyma">TYMa</option>
+                        <option value="mssn">MSSN</option>
+                        <option value="nasfat">NASFAT</option>
+                        <option value="aud">Ansaru-Deen</option>
+                        <option value="tmc">TMC</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
                     <select name="category" id="category" required>
                         <option>Select a Category</option>

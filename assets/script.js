@@ -24,6 +24,7 @@ lcamp.addEventListener('click', () => {
         document.querySelector('#email').required = false;
         document.querySelector('#category').required = false;
         document.querySelector('#sch').required = false;
+        document.querySelector('#org').required = false;
     }else{
         document.querySelector('#btn1').classList.remove('d-none');
         document.querySelector('#btn3').classList.toggle('d-none');

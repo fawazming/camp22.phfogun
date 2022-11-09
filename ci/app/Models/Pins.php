@@ -10,7 +10,7 @@ class Pins extends Model
 
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['pin','used','vendor'];
+    protected $allowedFields = ['pin','used','vendor','sold'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
