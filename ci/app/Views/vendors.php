@@ -20,24 +20,24 @@
         <h5><a href="<?=base_url('/')?>">Home</a> > Buy pin from vendors</h5>
         <div class="row">
             <div class="col border">
-                <h2>Egba 1</h2>
-                <p>Sterling Bank <br> 0500883821 <br> PHF Egba</p>
-                <small><a href="tel:08115401835">08115401835</a></small>
-            </div>
-            <div class="col border">
                 <h2>Remo 1</h2>
-                <p>Access Bank <br> 0824997744 <br> Fawaz</p>
-                <small><a href="tel:08108097322">08108097322</a></small>
+                <p>Access Bank <br> 0043311961 <br> Fayombo Yusuf</p>
+                <small><a href="https://wa.me/2348182067634">08182067634</a></small>
             </div>
             <div class="col border">
                 <h2>Ijebu 1</h2>
                 <p>UBA <br> 2082020716 <br> Abdullah Oluwaseun</p>
-                <small><a href="tel:07030861214">07030861214</a></small>
+                <small><a href="https://wa.me/2347030861214">07030861214</a></small>
             </div>
             <div class="col border">
-                <h2>Egba 2</h2>
-                <p>UBA <br> 2114674430 <br> Olabode Ismail</p>
-                <small><a href="tel:09065644640">09065644640</a></small>
+                <h2>Egba 1</h2>
+                <p>Eco Bank <br> 5013061519 <br> Folorunso Hammed</p>
+                <small><a href="https://wa.me/2349065644640">09065644640</a></small>
+            </div>
+            <div class="col border">
+                <h2>Ado Odo</h2>
+                <p>GTB <br> 0036896883 <br> Adams Fatai</p>
+                <small><a href="https://wa.me/2348033899759">08033899759</a></small>
             </div>
         </div>
     </div>
