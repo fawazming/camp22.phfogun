@@ -32,7 +32,7 @@
             <div class="col border">
                 <h2>Egba 1</h2>
                 <p>Eco Bank <br> 5013061519 <br> Folorunso Hammed</p>
-                <small><a href="https://wa.me/2349065644640">09065644640</a></small>
+                <small><a href="https://wa.me/2348098483103">08098483103</a></small>
             </div>
             <div class="col border">
                 <h2>Ado Odo</h2>
