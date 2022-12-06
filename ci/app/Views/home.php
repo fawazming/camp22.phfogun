@@ -43,7 +43,7 @@
                 <div class="mb-3">
                     <label for="gender" class="form-label">Gender</label>
                     <select name="gender" id="gender" required>
-                        <option>Select a gender</option>
+                        <option value="">Select a gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
@@ -64,7 +64,7 @@
                 <div class="mb-3">
                     <label for="org" class="form-label">Which Islamic org. do you belong to?</label>
                     <select name="org" id="org" required>
-                        <option>Choose an Organisation</option>
+                        <option value="">Choose an Organisation</option>
                         <option value="phf">PHF</option>
                         <option value="tyma">TYMa</option>
                         <option value="mssn">MSSN</option>
@@ -77,7 +77,7 @@
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
                     <select name="category" id="category" required>
-                        <option>Select a Category</option>
+                        <option value="">Select a Category</option>
                         <option value="primary">Primary School</option>
                         <option value="jsec">Junior Secondary</option>
                         <option value="ssec">Senior Secondary</option>
