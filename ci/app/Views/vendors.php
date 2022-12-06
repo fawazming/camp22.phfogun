@@ -22,7 +22,7 @@
             <div class="col border">
                 <h2>Remo 1</h2>
                 <p>Access Bank <br> 0043311961 <br> Fayombo Yusuf</p>
-                <small><a href="https://wa.me/2348182067634">08182067634</a></small>
+                <small><a href="https://wa.me/2348063510530">0806 351 0530</a></small>
             </div>
             <div class="col border">
                 <h2>Ijebu 1</h2>
