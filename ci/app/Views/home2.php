@@ -39,7 +39,7 @@
                 <div class="mb-3">
                     <label for="gender" class="form-label">Gender</label>
                     <select name="gender" id="gender" required value="<?=$udata['gender']?>">
-                        <option>Select a gender</option>
+                        <option value="">Select a gender</option>
                         <option class="gend" value="male">Male</option>
                         <option class="gend" value="female">Female</option>
                     </select>
@@ -60,7 +60,7 @@
                 <div class="mb-3">
                     <label for="org" class="form-label">Which Islamic org. do you belong to?</label>
                     <select name="org" id="org" required>
-                        <option>Choose an Organisation</option>
+                        <option value="">Choose an Organisation</option>
                         <option value="phf">PHF</option>
                         <option value="tym">TYMa</option>
                         <option value="mssn">MSSN</option>
@@ -73,7 +73,7 @@
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
                     <select name="category" id="category" required value="<?=$udata['category']?>">
-                        <option>Select a Category</option>
+                        <option value="">Select a Category</option>
                         <option class="catg" value="primary">Primary School</option>
                         <option class="catg" value="jsec">Junior Secondary</option>
                         <option class="catg" value="ssec">Senior Secondary</option>
