@@ -269,7 +269,7 @@ class Logic extends BaseController
     public function mailer(array $data)
     {
         $email = \Config\Services::email();
-        $email->setFrom('quiz@phfogun.org', 'PHF Camp');
+        $email->setFrom('quiz@phfogun.org.ng', 'PHF Camp');
         $email->setTo($data['to']);
         // $email->setCC('another@another-example.com');
         // $email->setBCC('them@their-example.com');
