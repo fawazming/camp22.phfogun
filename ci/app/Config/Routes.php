@@ -46,6 +46,7 @@ $routes->get('pinstat', 'Logic::pinstat');
 $routes->get('payonline', 'Logic::payonline');
 $routes->post('proceedpayonline', 'Logic::proceedOnline');
 $routes->get('collectafricacall', 'Logic::webhook');
+$routes->get('tt', 'Logic::webhk');
 
 /**
  * --------------------------------------------------------------------
