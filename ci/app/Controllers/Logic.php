@@ -232,6 +232,17 @@ class Logic extends BaseController
         }
     }
 
+public function webhk()
+    {
+        $data = [
+                    'to' => $tranx['email'],
+                    'type' => 'link',
+                    'subject' => 'PMC Pin Purchase Successful',
+                    'message' => ['p1' => 'Al hamdulillah! Your pin purchase was successful.', 'p2'=>'Your Pin is 56789', 'p3' => 'Do continue your registeration by visiting https://camp.phfogun.org/register.', 'link'=>'https://camp.phfogun.org/register/', 'linktext'=>'Click here to continue your registeration'],
+                ];
+               var_dump ($this->mailer($data));
+    }
+
     private function genPayLink($email,$amt)
     {
         $ref = uniqid('phf22_', true);
