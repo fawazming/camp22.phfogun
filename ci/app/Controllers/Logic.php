@@ -235,7 +235,7 @@ class Logic extends BaseController
 public function webhk()
     {
         $data = [
-                    'to' => $tranx['email'],
+                    'to' => 'fawazpro27@gmail.com',
                     'type' => 'link',
                     'subject' => 'PMC Pin Purchase Successful',
                     'message' => ['p1' => 'Al hamdulillah! Your pin purchase was successful.', 'p2'=>'Your Pin is 56789', 'p3' => 'Do continue your registeration by visiting https://camp.phfogun.org/register.', 'link'=>'https://camp.phfogun.org/register/', 'linktext'=>'Click here to continue your registeration'],
