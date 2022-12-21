@@ -11,7 +11,7 @@ class Logic extends BaseController
 	public function index()
 	{
         echo view('header');
-        echo view('option');
+        echo view('options');
 		echo view('footer');
 	}
 
@@ -32,7 +32,7 @@ class Logic extends BaseController
 	public function register($pin = '')
 	{
         echo view('header');
-        echo view('pi', ['pin'=>$pin]);
+        echo view('pin', ['pin'=>$pin]);
 		echo view('footer');
 	}
 
