@@ -177,7 +177,7 @@ class Logic extends BaseController
     public function vend($vendor)
     {
         $Pins = new \App\Models\Pins();
-        $pp = $Pins->where(['sold'=>0, 'used'=>0, 'vendor'=>'new'])->limit(20)->find();
+        $pp = $Pins->where(['sold'=>0, 'used'=>0, 'vendor'=>'new'])->limit(10)->find();
         // var_dump($pp);
         echo ('20 Pins for vendor '.$vendor.'<br>');
         foreach ($pp as $key => $pin) {
